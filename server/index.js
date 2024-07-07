@@ -6,7 +6,7 @@ const PORTS = process.env.PORTS || 5000;
 
 //app.use(cors());
 const corsOptions = {
-    origin: 'https://wild-jade-cricket-garb.cyclic.app/employees',
+    origin: 'https://employee-dashboard-hnjv.onrender.com',
     methods: 'GET, HEAD, PUT PATCH, POST, DELETE',
     credentials: true
 }
