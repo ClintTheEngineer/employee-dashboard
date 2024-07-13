@@ -6,19 +6,12 @@ const pool = require('./db');
 const PORTS = process.env.PORTS || 5000;
 
 
+// CORS configuration
 const corsOptions = {
     origin: 'https://cander-dashboard.netlify.app',
-    methods: 'GET, HEAD, PUT PATCH, POST, DELETE',
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
     credentials: true
-}
-//app.use(cors(corsOptions))
-
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://cander-dashboard.netlify.app'); 
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-  });
+};
 
 // Apply CORS middleware with custom options
 app.use(cors(corsOptions));
