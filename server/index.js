@@ -14,12 +14,11 @@ const corsOptions = {
 app.use(cors(corsOptions))
 */
 
-// Custom CORS configuration
-const corsOptions = {
-    origin: 'https://cander-dashboard.netlify.app', // Replace with your domain
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Specify allowed methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-};
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); 
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 // Apply CORS middleware with custom options
 app.use(cors(corsOptions));
