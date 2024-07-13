@@ -1,17 +1,20 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const app = express();
+
 const pool = require('./db');
 const PORTS = process.env.PORTS || 5000;
-app.use(express.json());
 
+/*
 const corsOptions = {
     origin: 'https://cander-dashboard.netlify.app',
     methods: 'GET, HEAD, PUT PATCH, POST, DELETE',
     credentials: true
 }
 app.use(cors(corsOptions))
-
+*/
+app.use(cors());
+app.use(express.json());
 
 
 app.post("/employees", async(req, res) => {
