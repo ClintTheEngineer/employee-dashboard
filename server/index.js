@@ -6,7 +6,7 @@ const PORTS = process.env.PORTS || 5000;
 
 //app.use(cors());
 const corsOptions = {
-    origin: 'https://employee-dashboard-hnjv.onrender.com/employees',
+    origin: 'https://cander-dashboard.netlify.app',
     methods: 'GET, HEAD, PUT PATCH, POST, DELETE',
     credentials: true
 }
