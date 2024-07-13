@@ -5,14 +5,14 @@ const app = express();
 const pool = require('./db');
 const PORTS = process.env.PORTS || 5000;
 
-/*
+
 const corsOptions = {
     origin: 'https://cander-dashboard.netlify.app',
     methods: 'GET, HEAD, PUT PATCH, POST, DELETE',
     credentials: true
 }
-app.use(cors(corsOptions))
-*/
+//app.use(cors(corsOptions))
+
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); 
